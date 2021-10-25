@@ -1,2 +1,12 @@
 Runner.java
  Runner
+command/AddTree.java
+ command.AddTree
+model/Tree.java
+ model.Tree
+model/Neighbors.java
+ model.Neighbors
+model/Graph.java
+ model.Graph
+model/Ufds.java
+ model.Ufds

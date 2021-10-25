@@ -4,7 +4,6 @@ import com.mxgraph.view.mxGraph;
 import javax.swing.JFrame;
 
 public class Runner extends JFrame {
-    private static final long serialVersionUID = 1;
 
     public Runner() {
 
