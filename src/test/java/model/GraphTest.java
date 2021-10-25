@@ -28,22 +28,13 @@ class GraphTest {
     }
 
     @Test
-    void disjoin() {
-        Graph.get(3);
-        Graph.join(1,2);
-        Assert.assertEquals("[0, 0, 0][0, 0, 1][0, 1, 0]", Graph.print());
-        Graph.disjoin(1,2);
-        Assert.assertEquals("[0, 0, 0][0, 0, 0][0, 0, 0]", Graph.print());
-    }
-
-    @Test
     void remove() {
         Graph.get(3);
         Graph.join(0,1);
         Graph.join(1,2);
         Assert.assertEquals(0, Graph.getRemoved().size());
         Graph.remove(1);
-        Assert.assertEquals("[0, 0, 0][0, 0, 0][0, 0, 0]", Graph.print());
+        Assert.assertEquals("[0, -1, 0][-1, -1, -1][0, -1, 0]", Graph.print());
         Assert.assertEquals(1, Graph.getRemoved().size());
     }
 }

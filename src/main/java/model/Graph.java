@@ -6,6 +6,7 @@ import java.util.HashSet;
 /**
  * 1 == connected
  * 0 == disconnected
+ * -1 == removed
  */
 public class Graph {
 
@@ -36,17 +37,12 @@ public class Graph {
         g[c][r] = 1;
     }
 
-    public static void disjoin(int r, int c) {
-        int[][] g = get();
-        g[r][c] = 0;
-        g[c][r] = 0;
-    }
-
     public static void remove(int i) {
         removed.add(i);
+        int[][] g = get();
         for (int k = 0; k < length; k++) {
-            disjoin(i, k);
-            disjoin(k, i);
+            g[i][k] = -1;
+            g[k][i] = -1;
         }
     }
 

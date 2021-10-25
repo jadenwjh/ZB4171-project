@@ -11,7 +11,12 @@ public class Ufds {
     private static void get(int size) {
         if (sets == null) {
             sets = new int[size];
+            HashSet<Integer> removed = Graph.getRemoved();
             for (int i = 0; i < sets.length; i++) {
+                if (removed.contains(i)) {
+                    sets[i] = -1;
+                    continue;
+                }
                 sets[i] = i;
             }
         }
@@ -40,10 +45,6 @@ public class Ufds {
                     union(r, c);
                 }
             }
-        }
-
-        for (int removed : Graph.getRemoved()) {
-            sets[removed] = -1;
         }
     }
 

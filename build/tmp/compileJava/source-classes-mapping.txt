@@ -6,7 +6,7 @@ model/Tree.java
  model.Tree
 model/Neighbors.java
  model.Neighbors
-model/Graph.java
- model.Graph
 model/Ufds.java
  model.Ufds
+model/Graph.java
+ model.Graph

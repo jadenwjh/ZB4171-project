@@ -26,15 +26,9 @@ class UfdsTest {
         Graph.join(0, 2);
         Ufds.update();
         Assert.assertEquals("[0, 0, 0, 0, 4]", Ufds.print());
-        Graph.disjoin(1, 2);
-        Ufds.update();
-        Assert.assertEquals("[0, 0, 0, 0, 4]", Ufds.print());
-        Graph.disjoin(2, 3);
-        Ufds.update();
-        Assert.assertEquals("[0, 0, 0, 3, 4]", Ufds.print());
         Graph.remove(0);
         Ufds.update();
-        Assert.assertEquals("[-1, 1, 2, 3, 4]", Ufds.print());
+        Assert.assertEquals("[-1, 1, 2, 2, 4]", Ufds.print());
     }
 
 
