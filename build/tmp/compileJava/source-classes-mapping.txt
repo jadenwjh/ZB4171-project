@@ -10,3 +10,7 @@ model/Ufds.java
  model.Ufds
 model/Neighbors.java
  model.Neighbors
+model/Log.java
+ model.Log
+ model.Log$1
+ model.Log$Node

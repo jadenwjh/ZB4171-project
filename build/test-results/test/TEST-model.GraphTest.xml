@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.GraphTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-25T18:10:39" hostname="Wongs-iMac.local" time="0.015">
+<testsuite name="model.GraphTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-10-26T05:10:14" hostname="Wongs-iMac.local" time="0.004">
   <properties/>
-  <testcase name="remove()" classname="model.GraphTest" time="0.013"/>
+  <testcase name="remove()" classname="model.GraphTest" time="0.001"/>
   <testcase name="init()" classname="model.GraphTest" time="0.001"/>
   <testcase name="join()" classname="model.GraphTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

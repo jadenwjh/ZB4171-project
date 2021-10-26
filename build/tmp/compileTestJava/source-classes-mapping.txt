@@ -2,5 +2,7 @@ model/GraphTest.java
  model.GraphTest
 model/UfdsTest.java
  model.UfdsTest
+model/LogTest.java
+ model.LogTest
 model/NeighborsTest.java
  model.NeighborsTest

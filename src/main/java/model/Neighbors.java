@@ -7,7 +7,7 @@ public class Neighbors {
 
     private static HashMap<Integer, HashSet<Integer>> log;
 
-    public static HashMap<Integer, HashSet<Integer>> get() {
+    private static HashMap<Integer, HashSet<Integer>> get() {
         if (log == null) {
             int size = Graph.getLength();
             log = new HashMap<>();
@@ -21,6 +21,7 @@ public class Neighbors {
     public static void update() {
         int[][] graph = Graph.get();
         int size = Graph.getLength();
+        get();
 
         for (int r = 0; r < size; r++) {
             for (int c = 0; c < size; c++) {
