@@ -37,4 +37,14 @@ class GraphTest {
         Assert.assertEquals("[0, -1, 0][-1, -1, -1][0, -1, 0]", Graph.print());
         Assert.assertEquals(1, Graph.getRemoved().size());
     }
+
+    @Test
+    void neighbors() {
+        Graph.get(3);
+        Graph.join(1,2);
+        Assert.assertEquals(1, Graph.getNeighbors(2).size());
+        Graph.join(1,0);
+        Assert.assertEquals(2, Graph.getNeighbors(1).size());
+        Assert.assertEquals(1, Graph.getNeighbors(2).size());
+    }
 }

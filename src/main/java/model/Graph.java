@@ -37,13 +37,14 @@ public class Graph {
         g[c][r] = 1;
     }
 
-    public static void remove(int i) {
+    public static int remove(int i) {
         removed.add(i);
         int[][] g = get();
         for (int k = 0; k < length; k++) {
             g[i][k] = -1;
             g[k][i] = -1;
         }
+        return i;
     }
 
     public static HashSet<Integer> getRemoved() {
@@ -62,5 +63,16 @@ public class Graph {
     public static void clear() {
         graph = null;
         length = 0;
+    }
+
+    public static HashSet<Integer> getNeighbors(int key) {
+        int[][] g = get();
+        HashSet<Integer> neighbors = new HashSet<>();
+        for (int i = 0; i < length; i++) {
+            if (g[key][i] == 1 && key != i) {
+                neighbors.add(i);
+            }
+        }
+        return neighbors;
     }
 }

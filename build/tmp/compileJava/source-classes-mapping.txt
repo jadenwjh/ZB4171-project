@@ -4,13 +4,17 @@ command/AddTree.java
  command.AddTree
 model/Tree.java
  model.Tree
-model/Graph.java
- model.Graph
-model/Ufds.java
- model.Ufds
-model/Neighbors.java
- model.Neighbors
 model/Log.java
  model.Log
  model.Log$1
  model.Log$Node
+command/FindCandidates.java
+ command.FindCandidates
+model/ParentChildren.java
+ model.ParentChildren
+model/Ufds.java
+ model.Ufds
+model/Graph.java
+ model.Graph
+command/RankTree.java
+ command.RankTree

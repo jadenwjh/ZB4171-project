@@ -7,10 +7,10 @@ import java.util.HashMap;
 
 public class Log {
 
-    private static class Node {
-        final int key;
-        final int id;
-        final int rank;
+    public static class Node {
+        public final int key;
+        public final int id;
+        public final int rank;
 
         Node(int key, int id, int rank) {
             this.key = key;
