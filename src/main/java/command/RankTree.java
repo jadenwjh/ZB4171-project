@@ -14,36 +14,18 @@ import model.Ufds;
 
 public class RankTree {
 
-    static int testSize = 5;
-
-    private static void initTestGraph() {
-        // same as paper
-        // 0 = 41
-        // 1 = 20
-        // 2 = 75
-        // 3 = 86
-        // 4 = 33
-        Graph.clear();
-        Graph.get(testSize);
-        Graph.join(0, 1);
-        Graph.join(0, 2);
-        Graph.join(0, 3);
-        Graph.join(0, 4);
-        Graph.join(2, 3);
-        Graph.join(3, 4);
-    }
-
     /**
      * Key - Rank
      * Value - Parent | Children
+     * Remove testSize after data is ready
      * @return
      */
-    public static HashMap<Integer, List<ParentChildren>> rankTree() {
+    public static HashMap<Integer, List<ParentChildren>> rankTree(int testSize) {
         HashMap<Integer, List<ParentChildren>> output = new HashMap<>();
         int rank = 0;
 
         //TODO: change once data is ready
-        initTestGraph();
+//        initTestGraph();
 
         HashSet<Integer> candidates = new HashSet<>();
         HashMap<Integer, HashSet<Integer>> neighbors = new HashMap<>();

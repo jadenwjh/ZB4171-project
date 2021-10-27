@@ -1,7 +1,7 @@
 Runner.java
  Runner
-command/AddTree.java
- command.AddTree
+model/Graph.java
+ model.Graph
 model/Tree.java
  model.Tree
 model/Log.java
@@ -14,7 +14,5 @@ model/ParentChildren.java
  model.ParentChildren
 model/Ufds.java
  model.Ufds
-model/Graph.java
- model.Graph
 command/RankTree.java
  command.RankTree
