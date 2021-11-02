@@ -3,6 +3,11 @@ import com.mxgraph.view.mxGraph;
 
 import javax.swing.JFrame;
 
+import command.RankTree;
+import model.Graph;
+import model.Log;
+import model.Ufds;
+
 public class Runner extends JFrame {
 
     public Runner() {

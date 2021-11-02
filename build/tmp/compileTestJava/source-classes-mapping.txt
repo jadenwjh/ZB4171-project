@@ -1,7 +1,5 @@
 model/UfdsTest.java
  model.UfdsTest
-model/LogTest.java
- model.LogTest
 model/GraphTest.java
  model.GraphTest
 command/FindCandidatesTest.java

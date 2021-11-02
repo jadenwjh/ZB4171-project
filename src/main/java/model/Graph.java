@@ -23,7 +23,7 @@ public class Graph {
         return graph;
     }
 
-    protected static int[][] get() {
+    public static int[][] get() {
         return graph;
     }
 
@@ -37,14 +37,13 @@ public class Graph {
         g[c][r] = 1;
     }
 
-    public static int remove(int i) {
+    public static void remove(int i) {
         removed.add(i);
         int[][] g = get();
         for (int k = 0; k < length; k++) {
             g[i][k] = -1;
             g[k][i] = -1;
         }
-        return i;
     }
 
     public static HashSet<Integer> getRemoved() {
@@ -69,7 +68,7 @@ public class Graph {
         int[][] g = get();
         HashSet<Integer> neighbors = new HashSet<>();
         for (int i = 0; i < length; i++) {
-            if (g[key][i] == 1 && key != i) {
+            if (g[key][i] == 1) {
                 neighbors.add(i);
             }
         }

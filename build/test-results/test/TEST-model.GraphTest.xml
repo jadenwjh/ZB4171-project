@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.GraphTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-27T11:45:52" hostname="Wongs-iMac.local" time="0.016">
+<testsuite name="model.GraphTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-11-02T13:27:08" hostname="Wongs-iMac.local" time="0.016">
   <properties/>
   <testcase name="remove()" classname="model.GraphTest" time="0.013"/>
-  <testcase name="init()" classname="model.GraphTest" time="0.001"/>
-  <testcase name="join()" classname="model.GraphTest" time="0.001"/>
-  <testcase name="neighbors()" classname="model.GraphTest" time="0.001"/>
+  <testcase name="init()" classname="model.GraphTest" time="0.0"/>
+  <testcase name="join()" classname="model.GraphTest" time="0.0"/>
+  <testcase name="neighbors()" classname="model.GraphTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
