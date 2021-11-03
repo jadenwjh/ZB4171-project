@@ -81,7 +81,6 @@ public class RankTree {
             for (ParentChildren pc : output.get(currentRank)) {
                 if (!previousChildren.contains(pc.parent)) {
                     output.get(0).get(0).children.add(pc.parent);
-                    System.out.println(pc.parent + " at rank " + currentRank + " moved to rank 1");
                 }
             }
         }

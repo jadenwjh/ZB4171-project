@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="command.RankTreeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-03T08:45:58" hostname="Wongs-iMac.local" time="0.132">
+<testsuite name="command.RankTreeTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-03T09:14:20" hostname="Wongs-iMac.local" time="0.153">
   <properties/>
-  <testcase name="parentWithMoreThanOneChildren()" classname="command.RankTreeTest" time="0.004"/>
-  <testcase name="runData()" classname="command.RankTreeTest" time="0.126"/>
+  <testcase name="parentWithMoreThanOneChildren()" classname="command.RankTreeTest" time="0.005"/>
+  <testcase name="runData()" classname="command.RankTreeTest" time="0.146"/>
   <testcase name="paperExample()" classname="command.RankTreeTest" time="0.001"/>
   <system-out><![CDATA[Rank 0: 0 - [1, 3, 4]
 Rank 1: 1 - []
