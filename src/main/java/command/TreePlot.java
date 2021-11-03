@@ -1,8 +1,10 @@
 package command;
 
+import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 
+import java.awt.BorderLayout;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,9 +56,14 @@ public class TreePlot extends JFrame {
             rank++;
         }
 
-
         graph.getModel().endUpdate();
+
+        mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
+        layout.execute(graph.getDefaultParent());
+
         mxGraphComponent graphComponent = new mxGraphComponent(graph);
-        getContentPane().add(graphComponent);
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add(graphComponent, BorderLayout.CENTER);
+        new mxHierarchicalLayout(graph).execute(graph.getDefaultParent());
     }
 }

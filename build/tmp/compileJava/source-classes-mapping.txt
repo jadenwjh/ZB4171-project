@@ -14,7 +14,7 @@ model/Tree.java
  model.Tree
 command/CreateGraph.java
  command.CreateGraph
-Runner.java
- Runner
 command/RankTree.java
  command.RankTree
+Runner.java
+ Runner

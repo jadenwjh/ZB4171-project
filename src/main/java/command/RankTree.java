@@ -72,6 +72,20 @@ public class RankTree {
             candidates.clear();
         }
 
+        // if current rank parents not found in previous rank children, it should go back to root
+        for (int currentRank = 1; currentRank < rank; currentRank++) {
+            HashSet<Integer> previousChildren = new HashSet<>();
+            for (ParentChildren previous : output.get(currentRank - 1)) {
+                previousChildren.addAll(previous.children);
+            }
+            for (ParentChildren pc : output.get(currentRank)) {
+                if (!previousChildren.contains(pc.parent)) {
+                    output.get(0).get(0).children.add(pc.parent);
+                    System.out.println(pc.parent + " at rank " + currentRank + " moved to rank 1");
+                }
+            }
+        }
+
         return output;
     }
 
