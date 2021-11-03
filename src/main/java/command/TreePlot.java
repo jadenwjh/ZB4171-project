@@ -35,14 +35,14 @@ public class TreePlot extends JFrame {
 
                 Object parentNode = null;
                 if (rank == 0) {
-                    parentNode = graph.insertVertex(p, null, parent, 0, 0, nodeWidth, nodeHeight);
+                    parentNode = graph.insertVertex(p, null, Log.getScar(parent), 0, 0, nodeWidth, nodeHeight);
                     nodes.put(parent, parentNode);
                 } else {
                     parentNode = nodes.get(parent);
                 }
 
                 for (int child : children) {
-                    Object childNode = graph.insertVertex(p, null, child, 0, 0, nodeWidth, nodeHeight);
+                    Object childNode = graph.insertVertex(p, null, Log.getScar(child), 0, 0, nodeWidth, nodeHeight);
                     nodes.put(child, childNode);
                     graph.insertEdge(p, null, null, parentNode, childNode);
                 }

@@ -12,9 +12,9 @@ command/CreateGraph.java
  command.CreateGraph
 model/Tree.java
  model.Tree
-Runner.java
- Runner
 command/RankTree.java
  command.RankTree
+Runner.java
+ Runner
 command/TreePlot.java
  command.TreePlot
