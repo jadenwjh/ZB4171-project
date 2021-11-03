@@ -8,13 +8,13 @@ model/Graph.java
  model.Graph
 model/Ufds.java
  model.Ufds
-command/RankTree.java
- command.RankTree
+command/TreePlot.java
+ command.TreePlot
 model/Tree.java
  model.Tree
 command/CreateGraph.java
  command.CreateGraph
 Runner.java
  Runner
-command/TreePlot.java
- command.TreePlot
+command/RankTree.java
+ command.RankTree

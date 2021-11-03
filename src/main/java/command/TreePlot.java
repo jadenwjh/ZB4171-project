@@ -36,7 +36,7 @@ public class TreePlot extends JFrame {
 
                 Object parentNode = null;
                 if (rank == 0) {
-                    parentNode = graph.insertVertex(p, null, Log.getScar(parent), width, height, nodeWidth, nodeHeight);
+                    parentNode = graph.insertVertex(p, null, parent, width, height, nodeWidth, nodeHeight);
                     nodes.put(parent, parentNode);
                 } else {
                     parentNode = nodes.get(parent);
@@ -44,7 +44,7 @@ public class TreePlot extends JFrame {
 
                 height += (15 * (children.size() + 1));
                 for (int child : children) {
-                    Object childNode = graph.insertVertex(p, null, Log.getScar(child), width, height, nodeWidth, nodeHeight);
+                    Object childNode = graph.insertVertex(p, null, child, width, height, nodeWidth, nodeHeight);
                     nodes.put(child, childNode);
                     graph.insertEdge(p, null, rank, parentNode, childNode);
                     width += nodeWidth + 20;
