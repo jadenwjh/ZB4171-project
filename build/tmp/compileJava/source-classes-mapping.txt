@@ -1,20 +1,14 @@
-command/FindCandidates.java
- command.FindCandidates
 model/Log.java
  model.Log
-model/ParentChildren.java
- model.ParentChildren
+command/FindCandidate.java
+ command.FindCandidate
 model/Graph.java
  model.Graph
 model/Ufds.java
  model.Ufds
 command/CreateGraph.java
  command.CreateGraph
-model/Tree.java
- model.Tree
-command/RankTree.java
- command.RankTree
-Runner.java
- Runner
 command/TreePlot.java
  command.TreePlot
+Runner.java
+ Runner

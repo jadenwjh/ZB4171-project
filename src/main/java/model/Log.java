@@ -1,12 +1,8 @@
 package model;
 
-import com.sun.org.apache.xerces.internal.xs.ShortList;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -15,8 +11,9 @@ import java.util.Scanner;
 public class Log {
 
     private static HashMap<String, Integer> frequency;
-    private static HashMap<Integer, String> log1;
-    private static HashMap<String, Integer> log2;
+    private static HashMap<Integer, String> scars;
+    private static HashMap<String, Integer> indexes;
+    private static HashMap<String, Integer> cellCount;
     private static ArrayList<String> edges1;
     private static ArrayList<String> edges2;
     private static int number;
@@ -25,11 +22,12 @@ public class Log {
 
     public static void init(String filename) {
         final String path = filePath + filename;
-        if (frequency == null && log1 == null && edges1 == null && edges2 == null && log2 == null) {
+        if (frequency == null && scars == null && edges1 == null && edges2 == null && indexes == null && cellCount == null) {
             number = 0;
             frequency = new HashMap<>();
-            log1 = new HashMap<>();
-            log2 = new HashMap<>();
+            scars = new HashMap<>();
+            cellCount = new HashMap<>();
+            indexes = new HashMap<>();
             edges1 = new ArrayList<>();
             edges2 = new ArrayList<>();
             read(path);
@@ -38,6 +36,10 @@ public class Log {
 
     public static int getNumber() {
         return number;
+    }
+
+    public static int getCellCount(int id) {
+        return cellCount.get(scars.get(id));
     }
 
     public static ArrayList<String> getEdges1() {
@@ -60,22 +62,23 @@ public class Log {
 
         if (!current.equals("")) {
             System.out.println("Root: " + current + " with count " + count);
-            return log2.get(current);
+            return indexes.get(current);
         }
 
         return -1;
     }
 
     public static String getScar(int index) {
-        return log1.get(index);
+        return scars.get(index);
     }
+
     public static int getId(String scar) {
-        return log2.get(scar);
+        return indexes.get(scar);
     }
 
     public static void clear() {
-        log1 = null;
-        log2 = null;
+        scars = null;
+        indexes = null;
         frequency = null;
         edges1 = null;
         edges2 = null;
@@ -92,9 +95,11 @@ public class Log {
                 String input = s.nextLine();
                 if (!input.isEmpty()) {
                     String[] parameters = input.split(",");
-                    if (parameters.length == 3) {
+                    if (parameters.length == 5) {
                         String scar1 = parameters[1];
                         String scar2 = parameters[2];
+                        int count1 = Integer.parseInt(parameters[3].trim());
+                        int count2 = Integer.parseInt(parameters[4].trim());
 
                         if (frequency.get(scar1) == null) {
                             frequency.put(scar1, 1);
@@ -114,6 +119,9 @@ public class Log {
                             frequency.put(scar2, f2 + 1);
                         }
 
+                        cellCount.put(scar1, count1);
+                        cellCount.put(scar2, count2);
+
                         hashSet.add(scar1);
                         hashSet.add(scar2);
 
@@ -128,8 +136,8 @@ public class Log {
         }
 
         for (String id : hashSet) {
-            log1.put(number, id);
-            log2.put(id, number);
+            scars.put(number, id);
+            indexes.put(id, number);
             number++;
         }
     }

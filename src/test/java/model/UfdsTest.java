@@ -14,7 +14,7 @@ class UfdsTest {
     @BeforeEach
     void setUp() {
         Graph.clear();
-        Graph.get(5);
+        Graph.init(5);
         Graph.join(0, 1);
         Graph.join(2, 3);
     }

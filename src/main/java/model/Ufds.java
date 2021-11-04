@@ -50,8 +50,8 @@ public class Ufds {
 
     public static ArrayList<HashSet<Integer>> getSets() {
         HashSet<Integer> ranks = new HashSet<>();
-        for (int i = 0; i < sets.length; i++) {
-            ranks.add(sets[i]);
+        for (int k : sets) {
+            ranks.add(k);
         }
         ranks.remove(-1);
         ArrayList<HashSet<Integer>> out = new ArrayList<>();

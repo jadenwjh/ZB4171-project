@@ -14,13 +14,12 @@ public class Graph {
     private static HashSet<Integer> removed;
     private static int length = 0;
 
-    public static int[][] get(int size) {
+    public static void init(int size) {
         if (graph == null) {
             length = size;
             graph = new int[size][size];
             removed = new HashSet<>();
         }
-        return graph;
     }
 
     public static int[][] get() {
