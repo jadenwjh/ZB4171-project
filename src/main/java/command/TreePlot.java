@@ -4,7 +4,6 @@ import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
 
-import java.awt.BorderLayout;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -20,7 +19,7 @@ public class TreePlot extends JFrame {
     private static final int nodeWidth = 130;
     private static final int nodeHeight = 20;
 
-    public TreePlot (String dataFile) {
+    public TreePlot (String dataFile, int space) {
         Log.init(dataFile);
         final int dataSize = Log.getNumber();
         System.out.println("Number of nodes: " + dataSize);
@@ -30,20 +29,19 @@ public class TreePlot extends JFrame {
         mxGraph graph = new mxGraph();
         Object graphDefaultParent = graph.getDefaultParent();
         graph.getModel().beginUpdate();
+        Object rootNode = null;
 
         HashMap<Integer, HashSet<Integer>> parents = new HashMap<>();
         HashMap<Integer, Object> nodes = new HashMap<>();
-        boolean addedRoot = false;
         while (Graph.getRemoved().size() < dataSize) {
             Ufds.update();
 
             for (HashSet<Integer> set : Ufds.getSets()) {
-                if (!addedRoot) {
-                    int root = Log.getRoot();
+                if (rootNode == null) {
+                    int root = FindCandidate.find(set, parents);
                     parents.put(root, set);
-                    Object rootNode = graph.insertVertex(graphDefaultParent, null, Log.getScar(root), 0, 0, nodeWidth, nodeHeight);
+                    rootNode = graph.insertVertex(graphDefaultParent, null, Log.getScar(root), 0, 0, nodeWidth, nodeHeight);
                     nodes.put(root, rootNode);
-                    addedRoot = true;
                     Graph.remove(root);
                 } else {
                     int node = FindCandidate.find(set, parents);
@@ -69,11 +67,10 @@ public class TreePlot extends JFrame {
         graph.getModel().endUpdate();
 
         mxHierarchicalLayout layout = new mxHierarchicalLayout(graph);
-        layout.setInterRankCellSpacing(nodeHeight * 10);
+        layout.setInterRankCellSpacing(space);
+        layout.execute(graphDefaultParent);
 
         mxGraphComponent graphComponent = new mxGraphComponent(graph);
-        getContentPane().setLayout(new BorderLayout());
-        getContentPane().add(graphComponent, BorderLayout.CENTER);
-        layout.execute(graph.getDefaultParent());
+        getContentPane().add(graphComponent);
     }
 }

@@ -50,24 +50,6 @@ public class Log {
         return edges2;
     }
 
-    public static int getRoot() {
-        int count = 0;
-        String current = "";
-        for (Map.Entry<String, Integer> entry : frequency.entrySet()) {
-            if (entry.getValue() > count) {
-                count = entry.getValue();
-                current = entry.getKey();
-            }
-        }
-
-        if (!current.equals("")) {
-            System.out.println("Root: " + current + " with count " + count);
-            return indexes.get(current);
-        }
-
-        return -1;
-    }
-
     public static String getScar(int index) {
         return scars.get(index);
     }

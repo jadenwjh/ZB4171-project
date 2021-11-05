@@ -12,10 +12,9 @@ public class Runner extends JFrame {
         Graph.clear();
         Ufds.clear();
 
-        TreePlot frame = new TreePlot("test1.csv");
+        TreePlot frame = new TreePlot("ScarPair_A567_B_tested.csv", 100);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(100000, 100000);
+        frame.setSize(10000, 10000);
         frame.setVisible(true);
     }
-
 }

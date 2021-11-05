@@ -8,7 +8,7 @@ model/Ufds.java
  model.Ufds
 command/CreateGraph.java
  command.CreateGraph
-command/TreePlot.java
- command.TreePlot
 Runner.java
  Runner
+command/TreePlot.java
+ command.TreePlot
