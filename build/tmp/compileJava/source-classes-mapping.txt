@@ -1,14 +1,14 @@
-model/Log.java
- model.Log
-command/FindCandidate.java
- command.FindCandidate
 model/Graph.java
  model.Graph
 model/Ufds.java
  model.Ufds
+model/Log.java
+ model.Log
+command/FindCandidate.java
+ command.FindCandidate
+command/TreePlot.java
+ command.TreePlot
 command/CreateGraph.java
  command.CreateGraph
 Runner.java
  Runner
-command/TreePlot.java
- command.TreePlot
