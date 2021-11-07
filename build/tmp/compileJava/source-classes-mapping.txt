@@ -6,9 +6,9 @@ model/Log.java
  model.Log
 command/FindCandidate.java
  command.FindCandidate
-command/TreePlot.java
- command.TreePlot
 command/CreateGraph.java
  command.CreateGraph
+command/TreePlot.java
+ command.TreePlot
 Runner.java
  Runner

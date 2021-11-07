@@ -19,7 +19,7 @@ public class TreePlot extends JFrame {
     private static final int nodeWidth = 130;
     private static final int nodeHeight = 20;
 
-    public TreePlot (String dataFile, int space) {
+    public TreePlot (String dataFile, int space, int threshold) {
         Log.init(dataFile);
         final int dataSize = Log.getNumber();
         System.out.println("Number of nodes: " + dataSize);
@@ -40,11 +40,16 @@ public class TreePlot extends JFrame {
                 if (rootNode == null) {
                     int root = FindCandidate.find(set, parents);
                     parents.put(root, set);
-                    rootNode = graph.insertVertex(graphDefaultParent, null, Log.getScar(root), 0, 0, nodeWidth, nodeHeight);
+                    rootNode = graph.insertVertex(graphDefaultParent, null, Log.getScar(root).equals("0") ? "Root" : Log.getScar(root), 0, 0, nodeWidth, nodeHeight);
                     nodes.put(root, rootNode);
                     Graph.remove(root);
                 } else {
                     int node = FindCandidate.find(set, parents);
+
+                    if (Log.getCellCount(node) < threshold) {
+                        Graph.remove(node);
+                        continue;
+                    }
 
                     // Find the smallest set (most recently formed subtree with its own root as the parent) containing this node
                     int smallestSetSize = Integer.MAX_VALUE;
