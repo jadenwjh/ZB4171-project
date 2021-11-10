@@ -4,10 +4,10 @@ model/Ufds.java
  model.Ufds
 model/Log.java
  model.Log
-command/FindCandidate.java
- command.FindCandidate
 command/CreateGraph.java
  command.CreateGraph
+command/FindCandidate.java
+ command.FindCandidate
 command/TreePlot.java
  command.TreePlot
 Runner.java
